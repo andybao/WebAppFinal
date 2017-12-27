@@ -37,6 +37,7 @@ CREATE TABLE lee_persons
   person_zip_code VARCHAR2(20) DEFAULT null,
   person_email VARCHAR2(50) UNIQUE,
   person_balance NUMBER(9,2) DEFAULT 0.00,
+  person_password NUMBER DEFAULT 123,
   person_applied_job_id NUMBER DEFAULT null,
   CONSTRAINT lee_persons_person_applied_job_id_fk FOREIGN KEY (person_applied_job_id) REFERENCES lee_jobs(job_id),
   CONSTRAINT lee_persons_person_status_ck CHECK (person_status = 'DOCTOR' OR person_status = 'NURSE' OR person_status = 'VOLUNTEER' OR person_status = 'CANDIDATE' OR person_status = 'SHOPOWNER' OR person_status = 'HR' OR person_status = 'OTHER')
@@ -75,17 +76,17 @@ INSERT INTO lee_jobs VALUES (34, 'EMPLOYEE', 'employee - nurse', 'common nurse',
 INSERT INTO lee_jobs VALUES (35, 'EMPLOYEE', 'employee - nurse', 'operation nurse', '1-JAN-18', default, 'North York', 4000, 9);
 
 --insert persons' info
-INSERT INTO lee_persons VALUES (-1, 'Place', 'Holder', 'OTHER', '000-000-0000', 'placeholder st', 'Placeholder', 'PO', '00000', 'placeholder@gmail.com', '0.00', default);
-INSERT INTO lee_persons VALUES (0, 'Arodondo', 'Cesar', 'DOCTOR', '810-555-3700', '4545 Glenmeade Lane', 'Auburn Hills', 'MI', '48326', 'carodondo@gmail.com', '19.99', default);
-INSERT INTO lee_persons VALUES (1, 'Danielson', 'Rachael', 'DOCTOR', '559-555-1704', '353 E shaw Ave', 'Fresno', 'CA', '93710', 'rdanielson@gmail.com', '29.99', default);
-INSERT INTO lee_persons VALUES (2, 'Alondra', 'Zev', 'NURSE', '800-255-6210', 'PO Box 610', 'Olathe', 'KS', '66061', 'zalondra@gmail.com', '39.99', default);
-INSERT INTO lee_persons VALUES (3, 'Edgardo', 'Salina', 'NURSE', '559-555-7070', '6435 North Palm Ave, ste 101', 'Fresno', 'CA', '93704', 'sedgardo@gmail.com', '9.99', default);
-INSERT INTO lee_persons VALUES (4, 'Bradlee', 'Daniel', 'VOLUNTEER', '908-555-7222', '4 Cornwall Dr ste 102', 'East Brunswick', 'NJ', '08816', 'dbradlee@gmail.com', '19.99', default);
-INSERT INTO lee_persons VALUES (5, 'Dean', 'Julissa', 'VOLUNTEER', '961-555-4911', 'PO Box 942808', 'Sacramento', 'CA', '94208', 'jdeam@gmail.com', '29.99', default);
-INSERT INTO lee_persons VALUES (6, 'Marissa', 'Kyle', 'CANDIDATE', '559-555-6151', '1627 E street', 'Fresno', 'CA', '93706', 'kmarissa@gmail.com', '0.00', 30);
-INSERT INTO lee_persons VALUES (7, 'Warren', 'Quentin', 'CANDIDATE', '559-555-3113', 'PO Box 12332', 'Fresno', 'CA', '93777', 'qwarren@gmail.comm', '0.00', 31);
-INSERT INTO lee_persons VALUES (8, 'Eulalia', 'Kelsey', 'SHOPOWNER', '215-555-1500', 'P O Box 7247-7844', 'Philadelphia', 'PA', '19170', 'keulalia@gmail.com', '199.99', default);
-INSERT INTO lee_persons VALUES (9, 'Kapil', 'Robert', 'HR', '800-555-0344', 'P.O. Box 21209', 'Pasadena', 'CA', '91185', 'rkapil@gmail.com', '99.99', default);
+INSERT INTO lee_persons VALUES (-1, 'Place', 'Holder', 'OTHER', '000-000-0000', 'placeholder st', 'Placeholder', 'PO', '00000', 'placeholder@gmail.com', '0.00', default, default);
+INSERT INTO lee_persons VALUES (0, 'Arodondo', 'Cesar', 'DOCTOR', '810-555-3700', '4545 Glenmeade Lane', 'Auburn Hills', 'MI', '48326', 'carodondo@gmail.com', '19.99', default, default);
+INSERT INTO lee_persons VALUES (1, 'Danielson', 'Rachael', 'DOCTOR', '559-555-1704', '353 E shaw Ave', 'Fresno', 'CA', '93710', 'rdanielson@gmail.com', '29.99', default, default);
+INSERT INTO lee_persons VALUES (2, 'Alondra', 'Zev', 'NURSE', '800-255-6210', 'PO Box 610', 'Olathe', 'KS', '66061', 'zalondra@gmail.com', '39.99', default, default);
+INSERT INTO lee_persons VALUES (3, 'Edgardo', 'Salina', 'NURSE', '559-555-7070', '6435 North Palm Ave, ste 101', 'Fresno', 'CA', '93704', 'sedgardo@gmail.com', '9.99', default, default);
+INSERT INTO lee_persons VALUES (4, 'Bradlee', 'Daniel', 'VOLUNTEER', '908-555-7222', '4 Cornwall Dr ste 102', 'East Brunswick', 'NJ', '08816', 'dbradlee@gmail.com', '19.99', default, default);
+INSERT INTO lee_persons VALUES (5, 'Dean', 'Julissa', 'VOLUNTEER', '961-555-4911', 'PO Box 942808', 'Sacramento', 'CA', '94208', 'jdeam@gmail.com', '29.99', default, default);
+INSERT INTO lee_persons VALUES (6, 'Marissa', 'Kyle', 'CANDIDATE', '559-555-6151', '1627 E street', 'Fresno', 'CA', '93706', 'kmarissa@gmail.com', '0.00', default, 30);
+INSERT INTO lee_persons VALUES (7, 'Warren', 'Quentin', 'CANDIDATE', '559-555-3113', 'PO Box 12332', 'Fresno', 'CA', '93777', 'qwarren@gmail.comm', '0.00', default, 31);
+INSERT INTO lee_persons VALUES (8, 'Eulalia', 'Kelsey', 'SHOPOWNER', '215-555-1500', 'P O Box 7247-7844', 'Philadelphia', 'PA', '19170', 'keulalia@gmail.com', '199.99', default, default);
+INSERT INTO lee_persons VALUES (9, 'Kapil', 'Robert', 'HR', '800-555-0344', 'P.O. Box 21209', 'Pasadena', 'CA', '91185', 'rkapil@gmail.com', '99.99', default, default);
 
 -- INSERT msgs' info
 INSERT INTO lee_msgs VALUES (10, 'hi, could you help to do something?', -1, 6);

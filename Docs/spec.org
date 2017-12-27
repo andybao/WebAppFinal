@@ -4,20 +4,21 @@
 - U: UNIQUE
 - C: CHECK
 - N: NOT NULL
-| lee_persons                 | lee_jobs            | lee_gifts                    | lee_msgs                    |
-|-----------------------------+---------------------+------------------------------+-----------------------------|
-| person_id (P)               | job_id (P)          | gift_id (P)                  | msg_id (P)                  |
-| person_last_name (N)        | job_type (N,C)      | gift_type (N,C)              | msg_info (N)                |
-| person_first_name (N)       | job_title (N)       | gift_info (N,U)              | msg_previous_owner_id (F,N) |
-| person_status (N,C)         | job_info (N)        | gift_price                   | msg_owner_id (F,N)          |
-| person_phone (U)            | job_start_date (N)  | gift_privious_owner_id (F,N) |                             |
-| person_address              | job_end_date        | gift_owner_id (F,N)          |                             |
-| person_city                 | job_location (N)    |                              |                             |
-| person_state                | job_salary          |                              |                             |
-| person_zip_code             | job_contacts_id (N) |                              |                             |
-| person_email (U)            |                     |                              |                             |
-| person_balance              |                     |                              |                             |
-| person_applied_job_id (F)   |                     |                              |                             |
+| lee_persons               | lee_jobs            | lee_gifts                    | lee_msgs                    |
+|---------------------------+---------------------+------------------------------+-----------------------------|
+| person_id (P)             | job_id (P)          | gift_id (P)                  | msg_id (P)                  |
+| person_last_name (N)      | job_type (N,C)      | gift_type (N,C)              | msg_info (N)                |
+| person_first_name (N)     | job_title (N)       | gift_info (N,U)              | msg_previous_owner_id (F,N) |
+| person_status (N,C)       | job_info (N)        | gift_price                   | msg_owner_id (F,N)          |
+| person_phone (U)          | job_start_date (N)  | gift_privious_owner_id (F,N) |                             |
+| person_address            | job_end_date        | gift_owner_id (F,N)          |                             |
+| person_city               | job_location (N)    |                              |                             |
+| person_state              | job_salary          |                              |                             |
+| person_zip_code           | job_contacts_id (N) |                              |                             |
+| person_email (U)          |                     |                              |                             |
+| person_balance            |                     |                              |                             |
+| person_password           |                     |                              |                             |
+| person_applied_job_id (F) |                     |                              |                             |
 * Helper class
 ** oracleCredentials
 #+BEGIN_SRC c++
