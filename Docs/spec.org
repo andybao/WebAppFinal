@@ -1,0 +1,102 @@
+* DB
+- P: PRIMARY KEY
+- F: FOREIGN KEY
+- U: UNIQUE
+- C: CHECK
+- N: NOT NULL
+| lee_persons                 | lee_jobs            | lee_gifts                    | lee_msgs                    |
+|-----------------------------+---------------------+------------------------------+-----------------------------|
+| person_id (P)               | job_id (P)          | gift_id (P)                  | msg_id (P)                  |
+| person_last_name (N)        | job_type (N,C)      | gift_type (N,C)              | msg_info (N)                |
+| person_first_name (N)       | job_title (N)       | gift_info (N,U)              | msg_previous_owner_id (F,N) |
+| person_status (N,C)         | job_info (N)        | gift_price                   | msg_owner_id (F,N)          |
+| person_phone (U)            | job_start_date (N)  | gift_privious_owner_id (F,N) |                             |
+| person_address              | job_end_date        | gift_owner_id (F,N)          |                             |
+| person_city                 | job_location (N)    |                              |                             |
+| person_state                | job_salary          |                              |                             |
+| person_zip_code             | job_contacts_id (N) |                              |                             |
+| person_email (U)            |                     |                              |                             |
+| person_balance              |                     |                              |                             |
+| person_applied_job_id (F)   |                     |                              |                             |
+* Helper class
+** oracleCredentials
+#+BEGIN_SRC c++
+//DB server and user login info.
+//Public const string only, no method
+#+END_SRC
+** dbHelper
+#+BEGIN_SRC c++
+//Get columns' value based on where clause
+public List<string[]> queryDB(string[] columns, string table, string whereClause)
+//Get columns' value
+public List<string[]> queryDB(string[] columns, string table)
+//Get columns' count based on where clause
+public int queryDB(string table, string  whereClause)
+//Get columns' count
+public int queryDB(string table)
+//Insert an item into the table
+public string insertDB(string table, Dictionary<string, string> insertItem)
+//Update an item in the table
+public string updateDB(string table, Dictionary<string, string> updateItem, string whereClause)
+//Delete an item in the table
+public string deleteDB(string table, Dictionary<string, string> whereClause)
+//Get columns' name and value type
+public Dictionary<string, string> getTableDatatype(string table)
+//display db error msg
+public string displayErrorMsg(Label lbl_db_error_msg)
+//*TODO*: Add inner join table query
+//*TDDO*: Add keyword table query
+#+END_SRC
+** whereClauseHelper
+#+BEGIN_SRC c++
+//Analyse where clause
+public string[] analyseWhereClause(string whereClause)
+#+END_SRC
+** commonHelper
+#+BEGIN_SRC c++
+//Common methods for general usage
+#+END_SRC
+* User cases
+- Alice and Bob are our clients
+- Method will be updated later
+** Messenger (Andy)
+- Alice and Bob send msgs to each other
+| Step | Desc                              | Button | Method |
+|------+-----------------------------------+--------+--------|
+|  1.1 | Alice logins the system           | LOGIN  |        |
+|  1.2 | Alice finds Bob by id/name        | FIND   |        |
+|  1.3 | Alice sends a msg to Bob          | SEND   |        |
+|  1.4 | Bob gets Alice's msg               | CHECK  |        |
+|  1.5 | Bob replays Alice's msg            | SEND   |        |
+|  1.5 | Alice gets Bob's replay msgs      | CHECK  |        |
+|  1.6 | Alice and Bob delete a msg        | DELETE |        |
+|  1.7 | Alice and Bob clear their msg box | CLEAR  |        |
+** Employee recruit - admin (Raminder)
+- Alice is a HR, Bob is a candidate
+| Step | Desc                                    | Button              | Method |
+|------+-----------------------------------------+---------------------+--------|
+|  2.1 | All job titles are displayed            | n/a                 |        |
+|  2.3 | Alice clicks one of job to check detail | TEXTLINK(job title) |        |
+|  2.4 | Alice updates job detail                | UPDATE              |        |
+|  2.5 | Alice deletes job                       | DELETE              |        |
+|  2.6 | Alice creates new job                   | CREATE              |        |
+|  2.7 | Alice checks Bob's info                 | CHECK               |        |
+|  2.8 | Alice sends a msg to Bob                | SEND                |        |
+** Volunteer recruit - client (Brad)
+- Alice is a contacts of one job, Bob wants to find a volunteer job
+| Step | Desc                                                | Button              | Method |
+|------+-----------------------------------------------------+---------------------+--------|
+|  3.1 | All volunteer job titles are displayed              | n/a                 |        |
+|  3.2 | Bob filters volunteer job by location/duration      | FIND                |        |
+|  3.3 | Bob clicks one of jobs to check its detail          | TEXTLINK(job title) |        |
+|  3.4 | Bob creates his profile to apply a job              | CREATE              |        |
+|  3.5 | Bob sends a msg to Alice to get more info about job | SEND                |        |
+** E-card (Sophia)
+- Alice purchases a e-card for Bob
+| Step | Desc                                                 | Button   | Method |
+|------+------------------------------------------------------+----------+--------|
+|  4.1 | Alice logins the system, her balance is displayed     | LOGIN    |        |
+|  4.2 | All e-cards are displayed with its price             | n/a      |        |
+|  4.3 | Alice finds Bob by id/name                           | FIND     |        |
+|  4.4 | Alice purchases one card, and her balance is changed | PURCHASE |        |
+|  4.5 | Bob gets the card                                    | CHECK    |        |
