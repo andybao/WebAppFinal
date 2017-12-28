@@ -7,8 +7,8 @@ namespace FinalProject.Models
 {
     public class OracleCredentials
     {
-        public const string username = "n01257490";
-        public const string password = "oracle";
+        public const string username = "";
+        public const string password = "";
         public const string host = "calvin.humber.ca";
         public const string port = "1521";
         public const string sid = "grok";
