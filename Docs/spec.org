@@ -25,28 +25,31 @@
 //DB server and user login info.
 //Public const string only, no method
 #+END_SRC
-** dbHelper
+** CalvinDB
 #+BEGIN_SRC c++
 //Get columns' value based on where clause
-public List<string[]> queryDB(string[] columns, string table, string whereClause)
+//whereClause supports 'xx=xx' only
+public List<string[]> queryDB(string[] columns, string table, Dictionary<string, string> whereClause)
 //Get columns' value
 public List<string[]> queryDB(string[] columns, string table)
+//Get id and column based on keyword
+public List<string[]> queryDB(string column, string table, string keyWord)
 //Get columns' count based on where clause
-public int queryDB(string table, string  whereClause)
+//whereClause supports 'xx=xx' only
+public int queryDB(string table, Dictionary<string, string> whereClause)
 //Get columns' count
 public int queryDB(string table)
 //Insert an item into the table
+//insertItem is 'key/value' dictionary, e.g.: {'msg_id':'18', 'msg_info': 'hi', ...}
 public string insertDB(string table, Dictionary<string, string> insertItem)
 //Update an item in the table
+//updateItem is 'key/value' dictionary, e.g.: {'msg_id':'18', 'msg_info': 'hi', ...}
 public string updateDB(string table, Dictionary<string, string> updateItem, string whereClause)
 //Delete an item in the table
 public string deleteDB(string table, Dictionary<string, string> whereClause)
 //Get columns' name and value type
+//It same as sql 'desc [table]'
 public Dictionary<string, string> getTableDatatype(string table)
-//display db error msg
-public string displayErrorMsg(Label lbl_db_error_msg)
-//*TODO*: Add inner join table query
-//*TDDO*: Add keyword table query
 #+END_SRC
 ** whereClauseHelper
 #+BEGIN_SRC c++
