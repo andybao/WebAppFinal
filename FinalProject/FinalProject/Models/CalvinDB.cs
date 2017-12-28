@@ -183,6 +183,27 @@ namespace FinalProject.Models
             return resultInt = Convert.ToInt32(queryResultList[0][0]);
         }
 
+        public List<string[]> QueryDB(string column, string table, string keyWord)
+        {
+            string[] splitArray = column.Split(new char[] { '_' });
+            string id = splitArray[0] + "_id";
+
+            string[] columns = new string[] {id, column};
+            List<string[]> resultList = new List<string[]>();
+
+            List<string[]> tempQueryResult = QueryDB(columns, table);
+
+            foreach (var i in tempQueryResult)
+            {
+                if (i[1].Contains(keyWord))
+                {
+                    resultList.Add(i);
+                }
+            }
+
+            return resultList;
+        }
+
         public List<string[]> QueryDB(string[] columns, string table)
         {
             return QueryDB(columns, table, null);
