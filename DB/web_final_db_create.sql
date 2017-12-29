@@ -1,20 +1,28 @@
 BEGIN
+  EXECUTE IMMEDIATE 'DROP TABLE lee_questions';
   EXECUTE IMMEDIATE 'DROP TABLE lee_gifts';
   EXECUTE IMMEDIATE 'DROP TABLE lee_msgs';
   EXECUTE IMMEDIATE 'DROP TABLE lee_persons';
   EXECUTE IMMEDIATE 'DROP TABLE lee_jobs';
 
-EXCEPTION
-  WHEN OTHERS THEN DBMS_OUTPUT.PUT_LINE('');
+--EXCEPTION
+  --WHEN OTHERS THEN DBMS_OUTPUT.PUT_LINE('');
 END;
 /
 show errors
+
+CREATE TABLE lee_questions
+(
+  question_id NUMBER CONSTRAINT lee_questions_question_id_pk PRIMARY KEY,
+  question_info VARCHAR2(200) NOT NULL,
+  question_answer VARCHAR2(1000) NOT NULl
+);
 
 CREATE TABLE lee_jobs
 (
   job_id NUMBER CONSTRAINT lee_jobs_job_id_pk PRIMARY KEY,
   job_type VARCHAR2(15) NOT NULL,
-  job_title VARCHAR2(30) NOT NULL,
+  job_title VARCHAR2(200) NOT NULL,
   job_info VARCHAR2(2000) NOT NULL,
   job_start_date DATE NOT NULL,
   job_end_date DATE DEFAULT null,
@@ -101,3 +109,7 @@ INSERT INTO lee_gifts VALUES (24, 'FOOD', 'fries and chicken', 6.99, -1, 8 );
 INSERT INTO lee_gifts VALUES (25, 'FOOD', 'pizza', 1.99, -1, 8 );
 INSERT INTO lee_gifts VALUES (26, 'DRINK', 'coke', 0.99, -1, 8 );
 INSERT INTO lee_gifts VALUES (27, 'DRINK', 'beer', 1.99, -1, 8 );
+
+-- INSERT questions' info
+INSERT INTO lee_questions VALUES(40, 'What is the address', 'abc street 123');
+INSERT INTO lee_questions VALUES(41, 'What is the phone number', '012-345-6789');

@@ -16,6 +16,14 @@ namespace FinalProject.Models
         private const string TABLE_LEE_JOBS = "lee_jobs";
         private const string TABLE_LEE_GIFTS = "lee_gifts";
         private const string TABLE_LEE_MSGS = "lee_msgs";
+        private const string TABLE_LEE_QUESTIONS = "lee_questions";
+
+        private string[] COLUMNS_LEE_QUESTIONS = new string[]
+        {
+        "question_id",
+        "question_info",
+        "question_answer"
+        }
 
         private string[] COLUMNS_LEE_PERSONS = new string[]
         {
@@ -113,6 +121,9 @@ namespace FinalProject.Models
                     break;
                 case TABLE_LEE_MSGS:
                     columns = COLUMNS_LEE_MSGS;
+                    break;
+                case TABLE_LEE_QUESTIONS:
+                    columns = COLUMNS_LEE_QUESTIONS;
                     break;
                 default:
                     columns = null;
