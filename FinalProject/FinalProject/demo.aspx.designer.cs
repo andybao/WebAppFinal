@@ -22,48 +22,201 @@ namespace FinalProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lbtn_demo_query_lee_msgs_table_ control.
+        /// lbl_demo_db_error_msg_display_ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_query_lee_msgs_table_;
+        protected global::System.Web.UI.WebControls.Label lbl_demo_db_error_msg_display_;
         
         /// <summary>
-        /// lbtn_demo_hide_ control.
+        /// lbtn_demo_query_all_columns_from_a_table_ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_query_all_columns_from_a_table_;
         
         /// <summary>
-        /// lbl_demo_query_msgs_table_display control.
+        /// lbtn_demo_hide_1_ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_demo_query_msgs_table_display;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_1_;
         
         /// <summary>
-        /// lbtn_demo_keyword_ control.
+        /// lbl_demo_query_all_columns_from_a_table_display_ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_keyword_;
+        protected global::System.Web.UI.WebControls.Label lbl_demo_query_all_columns_from_a_table_display_;
         
         /// <summary>
-        /// lbl_demo_keyword_info control.
+        /// lbtn_demo_query_columns_by_where_clause_ control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_demo_keyword_info;
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_query_columns_by_where_clause_;
+        
+        /// <summary>
+        /// lbtn_demo_hide_2_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_2_;
+        
+        /// <summary>
+        /// lbl_demo_query_columns_by_where_clause_display_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_demo_query_columns_by_where_clause_display_;
+        
+        /// <summary>
+        /// lbtn_demo_query_columns_by_keyword_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_query_columns_by_keyword_;
+        
+        /// <summary>
+        /// lbtn_demo_hide_3_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_3_;
+        
+        /// <summary>
+        /// lbl_demo_query_columns_by_keyword_display_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_demo_query_columns_by_keyword_display_;
+        
+        /// <summary>
+        /// lbtn_demo_query_one_column_by_its_name_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_query_one_column_by_its_name_;
+        
+        /// <summary>
+        /// lbtn_demo_hide_4_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_4_;
+        
+        /// <summary>
+        /// lbl_demo_query_one_column_by_its_name_display_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_demo_query_one_column_by_its_name_display_;
+        
+        /// <summary>
+        /// lbtn_demo_insert_one_item_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_insert_one_item_;
+        
+        /// <summary>
+        /// lbtn_demo_hide_5_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_5_;
+        
+        /// <summary>
+        /// lbl_demo_insert_one_item_display_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_demo_insert_one_item_display_;
+        
+        /// <summary>
+        /// lbtn_demo_update_one_item_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_update_one_item_;
+        
+        /// <summary>
+        /// lbtn_demo_hide_6_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_6_;
+        
+        /// <summary>
+        /// lbtn_demo_update_one_item_display_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbtn_demo_update_one_item_display_;
+        
+        /// <summary>
+        /// lbtn_demo_delete_one_item_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_delete_one_item_;
+        
+        /// <summary>
+        /// lbtn_demo_hide_7_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtn_demo_hide_7_;
+        
+        /// <summary>
+        /// lbl_demo_delete_one_item_display_ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_demo_delete_one_item_display_;
     }
 }

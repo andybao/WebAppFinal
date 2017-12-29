@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using Oracle.ManagedDataAccess.Client;
 
 namespace FinalProject.Models
@@ -12,20 +13,18 @@ namespace FinalProject.Models
         private const string port = OracleCredentials.port;
         private const string sid = OracleCredentials.sid;
         private const string user = OracleCredentials.username;
-        private const string pw = OracleCredentials.password;        
+        private const string pw = OracleCredentials.password;
 
         private static OracleConnection conn = new OracleConnection(OracleConnString(host, port, sid, user, pw));
-        private string _message;
 
-        private string connectionString { get { return OracleConnString(host, port, sid, user, pw); } }
+        private Label errorDisplayHtmlLabel;
 
-        public string Message
+        public CalvinDB(Label htmlLabel)
         {
-            get { return _message; }
-            set { this._message = value; }
+            errorDisplayHtmlLabel = htmlLabel;
         }
 
-        public string DeleteDB(string table, Dictionary<string, string> whereClause)
+        public int DeleteDB(string table, Dictionary<string, string> whereClause)
         {
             int rows = -1;
 
@@ -46,16 +45,16 @@ namespace FinalProject.Models
 
             } catch (OracleException excep)
             {
-                throw excep;
+                oracleExceptionHandle(excep);
             } finally
             {
                 conn.Close();
             }
 
-            return rows.ToString();
+            return rows;
         }
         
-        public string UpdateDB(string table, Dictionary<string, string> updateItem, Dictionary<string, string> whereClause)
+        public int UpdateDB(string table, Dictionary<string, string> updateItem, Dictionary<string, string> whereClause)
         {
             int rows = 0;
 
@@ -97,17 +96,17 @@ namespace FinalProject.Models
 
             } catch (OracleException excep)
             {
-                throw excep;
+                oracleExceptionHandle(excep);
             } finally
             {
                 conn.Close();
             }
 
-            return rows.ToString();
+            return rows;
             
         }
 
-        public string InsertDB(string table, Dictionary<string, string> insertItem)
+        public int InsertDB(string table, Dictionary<string, string> insertItem)
         {
 
             int rows = 0;
@@ -152,13 +151,13 @@ namespace FinalProject.Models
 
             } catch (OracleException excep)
             {
-                throw excep;
+                oracleExceptionHandle(excep);
             } finally
             {
                 conn.Close();
             }
 
-            return rows.ToString();
+            return rows;
         }
 
         public int QueryDB(string table)
@@ -177,7 +176,7 @@ namespace FinalProject.Models
                 queryResultList = QueryDB(columns, table, whereClause);
             } catch (OracleException excep)
             {
-                throw excep;                
+                oracleExceptionHandle(excep);
             }
 
             return resultInt = Convert.ToInt32(queryResultList[0][0]);
@@ -252,7 +251,7 @@ namespace FinalProject.Models
                 
             } catch (OracleException excep)
             {
-                throw excep;
+                oracleExceptionHandle(excep);
                 
             } finally
             {                
@@ -280,13 +279,23 @@ namespace FinalProject.Models
                 reader.Close();
             } catch (OracleException excep)
             {
-                throw excep;
+                oracleExceptionHandle(excep);
             } finally
             {
                 conn.Close();
             }
                         
             return dataTypeDict;
+        }
+
+        private void oracleExceptionHandle(OracleException excep)
+        {
+            if (errorDisplayHtmlLabel != null)
+            {
+                errorDisplayHtmlLabel.Text = excep.Message;
+                errorDisplayHtmlLabel.Visible = true;
+                errorDisplayHtmlLabel.ForeColor = System.Drawing.Color.Red;
+            }
         }
 
         private static string OracleConnString(string host, string port, string servicename, string user, string pass)
