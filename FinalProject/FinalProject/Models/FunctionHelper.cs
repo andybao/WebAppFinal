@@ -23,7 +23,7 @@ namespace FinalProject.Models
         "question_id",
         "question_info",
         "question_answer"
-        }
+        };
 
         private string[] COLUMNS_LEE_PERSONS = new string[]
         {

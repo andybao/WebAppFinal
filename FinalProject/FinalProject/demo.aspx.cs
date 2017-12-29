@@ -34,7 +34,7 @@ namespace FinalProject
 
         protected void lbtn_demo_query_all_columns_from_a_table_click(object sender, EventArgs e)
         {
-            string table = "lee_msgs";
+            string table = "lee_questions";
 
             string resultString = "";
 
