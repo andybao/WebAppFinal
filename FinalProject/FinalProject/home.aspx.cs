@@ -13,5 +13,22 @@ namespace FinalProject
         {
 
         }
+
+        protected void lbtn_demo_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Demo/demo.aspx");
+        }
+
+        protected void lbtn_andrei_click(object sender, EventArgs e) { }
+
+        protected void lbtn_bradley_click(object sender, EventArgs e) { }
+
+        protected void lbtn_czarina_click(object sender, EventArgs e) { }
+
+        protected void lbtn_raminder_click(object sender, EventArgs e) { }
+
+        protected void lbtn_sophia_click(object sender, EventArgs e) { } 
+
+        protected void lbtn_andy_click(object sender, EventArgs e) { }
     }
 }

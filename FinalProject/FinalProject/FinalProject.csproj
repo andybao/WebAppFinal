@@ -78,17 +78,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="demo.aspx" />
+    <Content Include="Demo\demo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="demo.aspx.cs">
+    <Compile Include="Demo\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="demo.aspx.designer.cs">
+    <Compile Include="Demo\demo.aspx.designer.cs">
       <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -101,8 +101,8 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CalvinDB.cs" />
-    <Compile Include="Models\FunctionHelper.cs" />
+    <Compile Include="Models\andybao\CalvinDB.cs" />
+    <Compile Include="Models\andybao\FunctionHelper.cs" />
     <Compile Include="Models\OracleCredentials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
