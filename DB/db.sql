@@ -51,6 +51,7 @@ JOB_PERSON_ID NUMBER REFERENCES PERSONS (PERSON_ID)
 
 INSERT INTO persons VALUES (73, 'Durant', 'Kevin', 'survey_admin', 'kd@gmail.com', '12345', null);
 INSERT INTO persons VALUES (1, 'Franco', 'James', 'patient', 'jf@gmail.com', '55555', null);
+INSERT INTO persons VALUES (3, 'Navumau', 'Andrei', 'admin', 'andrei@humber.ca', '1', '1');
 
 INSERT INTO surveys VALUES (0, 'Does our service good?', 3, 1, 1, 73);
 INSERT INTO surveys VALUES (1, 'Is it easy to find our place?', 5, 0, 0, 73);
