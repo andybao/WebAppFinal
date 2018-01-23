@@ -38,7 +38,7 @@ namespace FinalProject
 
             string resultString = "";
 
-            List<string[]> resultQueryList = helper.getAllColumnsFromATable(table);
+            List<string[]> resultQueryList = helper.getAllColumnsValueFromATable(table);
             
             resultString = helper.generateResultString(resultQueryList);
             lbl_demo_query_all_columns_from_a_table_display_.Text = resultString;

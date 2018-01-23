@@ -78,12 +78,54 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Andrei\Authorized.aspx" />
+    <Content Include="Andrei\FAQ.aspx" />
+    <Content Include="Andrei\Login.aspx" />
+    <Content Include="Andrei\NewQuestion.aspx" />
+    <Content Include="Andy\survey.aspx" />
     <Content Include="Demo\demo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
+    <Content Include="Images\Dryden-Regional-Health-Centre-Logo.jpg" />
+    <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Andrei\Authorized.aspx.cs">
+      <DependentUpon>Authorized.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andrei\Authorized.aspx.designer.cs">
+      <DependentUpon>Authorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Andrei\FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andrei\FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Andrei\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andrei\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Andrei\NewQuestion.aspx.cs">
+      <DependentUpon>NewQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andrei\NewQuestion.aspx.designer.cs">
+      <DependentUpon>NewQuestion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Andy\survey.aspx.cs">
+      <DependentUpon>survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andy\survey.aspx.designer.cs">
+      <DependentUpon>survey.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demo\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -101,6 +143,9 @@
     <Compile Include="home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Andrei\Category.cs" />
+    <Compile Include="Models\Andrei\ConnectDb.cs" />
+    <Compile Include="Models\Andrei\Question.cs" />
     <Compile Include="Models\andybao\CalvinDB.cs" />
     <Compile Include="Models\andybao\FunctionHelper.cs" />
     <Compile Include="Models\OracleCredentials.cs" />

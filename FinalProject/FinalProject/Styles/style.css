@@ -1,0 +1,162 @@
+﻿/* GENERAL STYLES, CLASSES, COLORS */
+
+body {
+    /*background-color: #492D5D;*/ /*for admin panel*/
+    background-color: #ADBEA0;
+    font-family:Arial, sans-serif;
+}
+
+#page {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+/* HEADER SECTION */
+
+header {
+    padding: 20px;
+    background-color: #5B8850;
+}
+
+#logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* MAIN SECTION */
+
+form div {
+    margin-bottom: 10px;
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.inpt {
+    width: 100%;
+}
+
+#faq_form, #new_form, #client_form {
+    width:900px;
+    padding: 0 50px;
+}
+
+#faq_form .flex-nner [id*="txt"], #new_form .flex-nner [id*="txt"], #client_form .flex-nner [id*="txt"] {
+    flex: 4;
+}
+
+#faq_form [id*="btn"], #new_form [id*="btn"], #client_form [id*="btn"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.btn-cont {
+    /*padding: 0 50px;*/
+}
+
+h1 {
+    text-align:center;
+}
+
+main {
+    padding:10px;
+    min-height:600px;
+}
+
+.flex-nner {
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #D1EBEB;
+    color: #3F6C6C;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.flex-nner [id*="lbl"] {
+    flex: 1;
+    text-align: right;
+    margin: 5px 10px;
+    padding: 5px 10px;
+}
+
+.flex-nner [id*="txt"] {
+    flex: 1;
+    margin: 5px 10px;
+    padding: 5px 10px;
+}
+
+.flex-nner [id*="error"] {
+    flex: 2;
+    margin: 5px 10px;
+    padding: 5px 10px;
+    color: #6C2218;
+}
+
+[id*="btn"] {
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    border: 0;
+}
+
+#btn_login {
+    background-color: #184C20;
+    color: #D1EBD5;
+}
+
+#botn_logout {
+    background-color: #87CEFA;
+    width: 20%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.question, .question_found {
+    background-color: #5B8850;
+    color: #ffffff;
+    padding: 5px 20px 5px 5px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.question_found {
+    background-color: #AA5826;
+}
+
+
+.answer {
+    padding-top:10px;
+    font-size: 1.5em;
+}
+
+.meta {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.spacer {
+    height: 30px;
+}
+
+#faq_list {
+    padding:20px;
+}
+
+span {
+    display:block;
+}
+
+/* FOOTER SECTION */
+footer {
+    height: 50px;
+    background-color: #317539;
+    color: #ffffff;
+    text-align:center;
+    padding:5px;
+}

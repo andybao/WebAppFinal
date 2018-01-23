@@ -194,7 +194,7 @@ namespace FinalProject.Models
 
             foreach (var i in tempQueryResult)
             {
-                if (i[1].Contains(keyWord))
+                if (i[1].Equals(keyWord))
                 {
                     resultList.Add(i);
                 }
@@ -284,7 +284,6 @@ namespace FinalProject.Models
             {
                 conn.Close();
             }
-                        
             return dataTypeDict;
         }
 

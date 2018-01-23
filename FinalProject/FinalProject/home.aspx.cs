@@ -19,7 +19,10 @@ namespace FinalProject
             Response.Redirect("Demo/demo.aspx");
         }
 
-        protected void lbtn_andrei_click(object sender, EventArgs e) { }
+        protected void lbtn_andrei_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Andrei/Login.aspx");
+        }
 
         protected void lbtn_bradley_click(object sender, EventArgs e) { }
 
@@ -29,6 +32,10 @@ namespace FinalProject
 
         protected void lbtn_sophia_click(object sender, EventArgs e) { } 
 
-        protected void lbtn_andy_click(object sender, EventArgs e) { }
+        protected void lbtn_andy_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Andy/survey.aspx");
+        }
+
     }
 }
