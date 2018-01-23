@@ -346,6 +346,42 @@ namespace bradCampbell_FinalAssignment {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
+        /// deleteAccTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label deleteAccTitle;
+        
+        /// <summary>
+        /// deleteAcc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label deleteAcc;
+        
+        /// <summary>
+        /// deleteAccInput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox deleteAccInput;
+        
+        /// <summary>
+        /// deleteAccButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteAccButton;
+        
+        /// <summary>
         /// error_message_text control.
         /// </summary>
         /// <remarks>

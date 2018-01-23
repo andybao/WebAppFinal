@@ -69,6 +69,14 @@
                 <asp:Button ID="Button1" runat="server" Text="View Task Volunteers" onClick="btn_add_volunteer_task_Click"/>
             
                 <hr />
+
+                <asp:Label ID="deleteAccTitle" runat="server">Delete Account</asp:Label><br /><br />
+                <asp:Label ID="deleteAcc" runat="server">Account Email: </asp:Label>
+                <asp:TextBox ID="deleteAccInput" runat="server"></asp:TextBox><br /><br />
+                
+                <asp:Button ID="deleteAccButton" runat="server" Text="Delete Volunteer" onClick="btn_delete_volunteer_Click"/>
+            
+                <hr />
             </div>
             <asp:Label ID="error_message_text" runat="server"></asp:Label>
 

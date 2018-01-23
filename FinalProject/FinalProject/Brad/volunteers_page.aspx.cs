@@ -207,76 +207,92 @@ namespace bradCampbell_FinalAssignment
             int rows = 0;
             int testedRows = 0;
             databaseConnect db = new databaseConnect();
-
-            
-
-            if (Validator.EmailIsValid(volunteer.Volunteer_Email))
+            if (userPasswordInput.Text == null || userPasswordInput.Text == "")
             {
-                conn.Open();
-
-                string query1 = "SELECT * FROM persons WHERE person_email = :v_email";
-
-                OracleCommand cmd1 = new OracleCommand(query1, conn);
-
-                cmd1.Parameters.Add(new OracleParameter("v_email", volunteer.Volunteer_Email));
-
-                OracleDataReader reader = cmd1.ExecuteReader();
-
-                
-
-                while (reader.Read())
-                {
-                    testedRows++;
-                }
-
-                conn.Close();
-
-                if (testedRows == 0)
-                {
-                    try
-                    {
-
-                        conn.Open();
-
-                        string command = "INSERT INTO persons VALUES(:v_id, :v_lname, :v_fname, :v_status, :v_email, :v_pw, :v_task)";
-
-                        OracleCommand cmd = new OracleCommand(command, conn);
-
-                        cmd.Parameters.Add(new OracleParameter("v_id", null));
-                        cmd.Parameters.Add(new OracleParameter("v_lname", volunteer.Volunteer_LastName));
-                        cmd.Parameters.Add(new OracleParameter("v_fname", volunteer.Volunteer_FirstName));
-                        cmd.Parameters.Add(new OracleParameter("v_status", "Volunteer"));
-                        cmd.Parameters.Add(new OracleParameter("v_email", volunteer.Volunteer_Email));
-                        cmd.Parameters.Add(new OracleParameter("v_pw", volunteer.Volunteer_Password));
-                        cmd.Parameters.Add(new OracleParameter("v_task", 1));
-
-                        rows = cmd.ExecuteNonQuery();
-
-                        conn.Close();
-
-                    }
-                    catch (OracleException ex)
-                    {
-                        error_message_text.Text = ex.Message;
-                    }
-                    finally
-                    {
-                        error_message_text.Text += " " + Convert.ToString(rows) + " rows updated.";
-                    }
-                }
-                else
-                {
-                    error_message_text.Text = "Email is already in use.";
-                }
-                
+                error_message_text.Text = "Please enter your password.";
             }
             else
             {
-                error_message_text.Text = "Please enter a valid email.";
-            }
-            
+                if (userLNameInput.Text == null || userLNameInput.Text == "")
+                {
+                    error_message_text.Text = "Please enter your last name.";
+                }
+                else
+                {
+                    if (userFNameInput.Text == null || userFNameInput.Text == "")
+                    {
+                        error_message_text.Text = "Please enter your first name.";
+                    }
+                    else
+                    { 
+                        if (Validator.EmailIsValid(volunteer.Volunteer_Email))
+                        {
+                            conn.Open();
 
-            
+                            string query1 = "SELECT * FROM persons WHERE person_email = :v_email";
+
+                            OracleCommand cmd1 = new OracleCommand(query1, conn);
+
+                            cmd1.Parameters.Add(new OracleParameter("v_email", volunteer.Volunteer_Email));
+
+                            OracleDataReader reader = cmd1.ExecuteReader();
+
+
+
+                            while (reader.Read())
+                            {
+                                testedRows++;
+                            }
+
+                            conn.Close();
+
+                            if (testedRows == 0)
+                            {
+                                try
+                                {
+
+                                    conn.Open();
+
+                                    string command = "INSERT INTO persons VALUES(:v_id, :v_lname, :v_fname, :v_status, :v_email, :v_pw, :v_task)";
+
+                                    OracleCommand cmd = new OracleCommand(command, conn);
+
+                                    cmd.Parameters.Add(new OracleParameter("v_id", null));
+                                    cmd.Parameters.Add(new OracleParameter("v_lname", volunteer.Volunteer_LastName));
+                                    cmd.Parameters.Add(new OracleParameter("v_fname", volunteer.Volunteer_FirstName));
+                                    cmd.Parameters.Add(new OracleParameter("v_status", "Volunteer"));
+                                    cmd.Parameters.Add(new OracleParameter("v_email", volunteer.Volunteer_Email));
+                                    cmd.Parameters.Add(new OracleParameter("v_pw", volunteer.Volunteer_Password));
+                                    cmd.Parameters.Add(new OracleParameter("v_task", 1));
+
+                                    rows = cmd.ExecuteNonQuery();
+
+                                    conn.Close();
+
+                                }
+                                catch (OracleException ex)
+                                {
+                                    error_message_text.Text = ex.Message;
+                                }
+                                finally
+                                {
+                                    error_message_text.Text += " " + Convert.ToString(rows) + " rows updated.";
+                                }
+                            }
+                            else
+                            {
+                                error_message_text.Text = "Email is already in use.";
+                            }
+
+                        }
+                        else
+                        {
+                            error_message_text.Text = "Please enter a valid email.";
+                        }
+                    }
+                }
+
+            }
             
         }
         protected void btn_view_volunteers_Click(object sender, EventArgs e)
@@ -352,6 +368,38 @@ namespace bradCampbell_FinalAssignment
             finally
             {
                 error_message_text.Text += " " + Convert.ToString(rows) + " rows updated.";
+            }
+        }
+        protected void btn_delete_volunteer_Click(object sender, EventArgs e)
+        {
+            volunteers volunteer = new volunteers();
+            volunteer.Volunteer_Email = deleteAccInput.Text;
+
+            int rows = 0;
+
+            databaseConnect db = new databaseConnect();
+            try
+            {
+
+                conn.Open();
+
+                string command = "DELETE FROM persons WHERE person_email = :v_email";
+
+                OracleCommand cmd = new OracleCommand(command, conn);
+
+                cmd.Parameters.Add(new OracleParameter("v_email", volunteer.Volunteer_Email));
+
+                rows = cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
+            catch (OracleException ex)
+            {
+                error_message_text.Text = ex.Message;
+            }
+            finally
+            {
+
             }
         }
         public static string OracleConnString(string host, string port, string servicename, string user, string pass)
