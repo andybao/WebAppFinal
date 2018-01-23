@@ -14,8 +14,8 @@ namespace FinalProject
         protected static string myhost = "calvin.humber.ca";
         protected static string port = "1521";
         protected static string sid = "grok";
-        protected static string user = OracleCredentials.username;
-        protected static string pass = OracleCredentials.password;
+        protected static string user = oracleToDb.username;
+        protected static string pass = oracleToDb.password;
         protected static string connectionString = OracleConnString(myhost, port, sid, user, pass);
         OracleConnection conn = new OracleConnection(connectionString);
 
@@ -40,17 +40,29 @@ namespace FinalProject
                 OracleDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
+                    list_jobs.InnerHtml += "<table>";
 
-                    list_jobs.InnerHtml += "<li>" + reader["id"] + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
-                        + reader["jtype"]  + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
-                        + reader["jtitle"] + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
-                        + reader["jinfo"]  + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
-                        + reader["jstart"] + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
-                        + reader["jend"]   + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"
-                        + reader["jloc"]   + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
-                        + reader["jsal"]   + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"
-                        + reader["pid"]    + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + "</li>";
-                    
+                    //list_jobs.InnerHtml += "<li>" + reader["id"] + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
+                    //    + reader["jtype"]  + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
+                    //    + reader["jtitle"] + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
+                    //    + reader["jinfo"]  + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
+                    //    + reader["jstart"] + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
+                    //    + reader["jend"]   + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"
+                    //    + reader["jloc"]   + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" 
+                    //    + reader["jsal"]   + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"
+                    //    + reader["pid"]    + "&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;" + "</li>";
+
+                    list_jobs.InnerHtml += "<tr><td><span class='job_id' >" + reader["id"] + "</span></td>" +
+                    "<td><span class='job_type'>" + reader["jtype"] + "</span></td>" +
+                    "<td><span class='job_title'>" + reader["jtitle"] + "</span></td>" +
+                    "<td><span class='job_info'>" + reader["jinfo"] + "</span></td>" +
+                    "<td><span class='job_start'>" + reader["jstart"] + "</span></td>" +
+                    "<td><span class='job_end'>" + reader["jend"] + "</span></td>" +
+                    "<td><span class='job_loc'>" + reader["jloc"] + "</span></td>" +
+                    "<td><span class='job_sal'>" + reader["jsal"] + "</span></td>" +
+                    "<td><span class='person_id'>" + reader["pid"] + "</span></td>" + 
+                    "</tr><tr class='spacer'></tr>";
+                    list_jobs.InnerHtml += "</table>";
                 }
                 conn.Close(); //close connection
             }
@@ -73,25 +85,21 @@ namespace FinalProject
                 string job_type;
                 string job_title = dropdownlist1.SelectedItem.Text;
                 string job_info = txt_info.Text;
-            //DateTime job_start_date = Convert.ToDateTime(date_picker.Value);
-            //DateTime job_start_date = txt_start.Text;
-            DateTime job_start_date = new DateTime();
-            
-            try
-            {
-                job_start_date = DateTime.Parse(date_picker.Value);
-            } catch (System.FormatException exception)
-            {
-                valid_start.Text = "Choose a start date";
-            }
-            string job_end_date = txt_end.Text;
+                DateTime job_start_date = new DateTime();
+                DateTime job_end_date = new DateTime();
                 string job_location = txt_loc.Text;
                 string job_salary = txt_salary.Text;
                 string job_person_id = txt_p_id.Text;
 
-            //DateTime dDate;
-            //dDate = DateTime.TryParse(txt_start.Text);
-            //String.Format("{0:d/MM/yyyy}", dDate);
+           
+            try
+            {
+                job_start_date = DateTime.Parse(date_picker.Value);
+            }
+            catch
+            {
+                valid_start.Text = "Choose a start date";
+            }
             if (rb_part.Checked)
             {
                 job_type = "Part Time";
@@ -101,15 +109,14 @@ namespace FinalProject
             {
                 job_type = "Full Time";
             }
-            /*if (job_start_date == null)
-            {
-                valid_start.Text = "Choose a start date";
-            }*/
+            
+               
+            
 
             int rows = 0;
                 try
                 {
-                    conn.Open();
+                  conn.Open();
 
                  string   command = "INSERT INTO lee_jobs VALUES(:Id, :type, :title, :info, :start_date, :end_date, :loc, :salary, :p_id)"; //prepared statement
 
@@ -163,12 +170,7 @@ namespace FinalProject
             {
                 valid_info.Text = "Job info is required";
             }
-            if (date_picker.Value == null)
-            {
-                valid_start.Text =  "Job start date is required";
-            }
-
-
+            
             if (txt_loc.Text == "")
             {
                 valid_location.Text = "Job location is required";
@@ -201,9 +203,8 @@ namespace FinalProject
             string job_type ;
             string job_title = dropdownlist1.SelectedItem.Text;
             string job_info = txt_info.Text;
-            DateTime job_start_date = Convert.ToDateTime(date_picker.Value);
-            //string job_start_date = txt_start.Text;
-            string job_end_date = txt_end.Text;
+            DateTime job_start_date = new DateTime();
+            DateTime job_end_date = new DateTime();
             string job_location = txt_loc.Text;
             string job_salary = txt_salary.Text;
             string job_person_id = txt_p_id.Text;
@@ -272,20 +273,20 @@ namespace FinalProject
 
         protected void btn_delete_jobs_Click(object sender, EventArgs e)
         {
-            string job_id = txt_id.Text;
+            string job_id = txt_job_id.Text;
            string  command = "DELETE FROM lee_jobs WHERE job_id = :Id";
 
             if (job_id.Trim() == "")
             {
-                valid_id.Text = "Enter Job Id which you want to delete";
+                valid_del_id.Text = "Enter Job Id which you want to delete";
             }
 
             for (int i = 0; i < job_id.Length; i++)
             {
                 if (!char.IsNumber(job_id[i]))
                 {
-                    valid_id.Text = "Please enter a valid number";
-                    txt_id.Text = "";
+                    valid_del_id.Text = "Please enter a valid number";
+                    txt_job_id.Text = "";
                     return;
                 }
             }

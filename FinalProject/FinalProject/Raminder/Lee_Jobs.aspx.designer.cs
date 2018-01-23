@@ -22,6 +22,24 @@ namespace FinalProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// btn_view_jobs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_view_jobs;
+        
+        /// <summary>
+        /// list_jobs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl list_jobs;
+        
+        /// <summary>
         /// txt_id control.
         /// </summary>
         /// <remarks>
@@ -112,13 +130,13 @@ namespace FinalProject {
         protected global::System.Web.UI.WebControls.Label valid_start;
         
         /// <summary>
-        /// txt_end control.
+        /// date_picker2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_end;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl date_picker2;
         
         /// <summary>
         /// txt_loc control.
@@ -193,6 +211,24 @@ namespace FinalProject {
         protected global::System.Web.UI.WebControls.Button btn_update_jobs;
         
         /// <summary>
+        /// txt_job_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_job_id;
+        
+        /// <summary>
+        /// valid_del_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label valid_del_id;
+        
+        /// <summary>
         /// btn_delete_jobs control.
         /// </summary>
         /// <remarks>
@@ -202,15 +238,6 @@ namespace FinalProject {
         protected global::System.Web.UI.WebControls.Button btn_delete_jobs;
         
         /// <summary>
-        /// btn_view_jobs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_view_jobs;
-        
-        /// <summary>
         /// lbl_server_message control.
         /// </summary>
         /// <remarks>
@@ -218,23 +245,5 @@ namespace FinalProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_server_message;
-        
-        /// <summary>
-        /// jobs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl jobs;
-        
-        /// <summary>
-        /// list_jobs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl list_jobs;
     }
 }
