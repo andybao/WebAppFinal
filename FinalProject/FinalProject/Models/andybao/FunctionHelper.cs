@@ -12,63 +12,28 @@ namespace FinalProject.Models
     {
         private const string NULL_VALUE_ERROR_MSG = "value cannot be null";
 
-        private const string TABLE_LEE_PERSONS = "lee_persons";
-        private const string TABLE_LEE_JOBS = "lee_jobs";
-        private const string TABLE_LEE_GIFTS = "lee_gifts";
-        private const string TABLE_LEE_MSGS = "lee_msgs";
-        private const string TABLE_LEE_QUESTIONS = "lee_questions";
+        private const string TABLE_PERSONS = "persons";
+        private const string TABLE_SURVEYS = "surveys";
 
-        private string[] COLUMNS_LEE_QUESTIONS = new string[]
+        private string[] COLUMNS_SURVEYS = new string[]
         {
         "question_id",
-        "question_info",
-        "question_answer"
+        "question_text",
+        "question_answer_yes",
+        "question_answer_no",
+        "question_answer_not_sure",
+        "question_admin_id"
         };
 
-        private string[] COLUMNS_LEE_PERSONS = new string[]
+        private string[] COLUMNS_PERSONS = new string[]
         {
             "person_id",
             "person_last_name",
             "person_first_name",
             "person_status",
-            "person_phone",
-            "person_address",
-            "person_city",
-            "person_state",
-            "person_zip_code",
-            "person_email",
-            "person_balance",
-            "person_password",
-            "person_applied_job_id"
+            "person_pw"
         };
-        private string[] COLUMNS_LEE_JOBS = new string[]
-        {
-            "job_id",
-            "job_type",
-            "job_title",
-            "job_info",
-            "job_start_date",
-            "job_end_date",
-            "job_location",
-            "job_salary",
-            "job_contacts_id"
-        };
-        private string[] COLUMNS_LEE_GIFTS = new string[]
-        {
-            "gift_id",
-            "gift_type",
-            "gift_info",
-            "gift_price",
-            "gift_previous_owner_id",
-            "gift_owner_id"
-        };
-        private string[] COLUMNS_LEE_MSGS = new string[]
-        {
-            "msg_id",
-            "msg_info",
-            "msg_previous_owner_id",
-            "msg_owner_id"
-        };
+
         private CalvinDB db;
 
         public FunctionHelper(Label dbErrorMsgHTMLLabel)
@@ -98,7 +63,7 @@ namespace FinalProject.Models
             return resultList;
         }
 
-        public List<string[]> getAllColumnsFromATable(string table)
+        public List<string[]> getAllColumnsValueFromATable(string table)
         {
             return getColumnsValueByWhereClause(table, null);
         }
@@ -110,20 +75,11 @@ namespace FinalProject.Models
 
             switch (table)
             {
-                case TABLE_LEE_PERSONS:
-                    columns = COLUMNS_LEE_PERSONS;
+                case TABLE_PERSONS:
+                    columns = COLUMNS_PERSONS;
                     break;
-                case TABLE_LEE_JOBS:
-                    columns = COLUMNS_LEE_JOBS;
-                    break;
-                case TABLE_LEE_GIFTS:
-                    columns = COLUMNS_LEE_GIFTS;
-                    break;
-                case TABLE_LEE_MSGS:
-                    columns = COLUMNS_LEE_MSGS;
-                    break;
-                case TABLE_LEE_QUESTIONS:
-                    columns = COLUMNS_LEE_QUESTIONS;
+                case TABLE_SURVEYS:
+                    columns = COLUMNS_SURVEYS;
                     break;
                 default:
                     columns = null;
@@ -154,7 +110,7 @@ namespace FinalProject.Models
             return resultQueryList;
         }
 
-        public int dbDuplicateValueCheck(string column, string table, string value, Label htmlLabel)
+        public int dbDuplicateValueCheck(string column, string table, string value)
         {
             List<string[]> queryResultList = new List<string[]>();
 

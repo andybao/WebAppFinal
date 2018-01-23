@@ -78,12 +78,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Andy\survey.aspx" />
     <Content Include="Demo\demo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Andy\survey.aspx.cs">
+      <DependentUpon>survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Andy\survey.aspx.designer.cs">
+      <DependentUpon>survey.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demo\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
