@@ -29,7 +29,10 @@ namespace FinalProject
             Response.Redirect("Brad/volunteers_page.aspx");
         }
 
-        protected void lbtn_czarina_click(object sender, EventArgs e) { }
+        protected void lbtn_czarina_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Czarina/Login.aspx");
+        }
 
         protected void lbtn_raminder_click(object sender, EventArgs e)
         {
