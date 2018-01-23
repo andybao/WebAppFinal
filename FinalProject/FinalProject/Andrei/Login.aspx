@@ -5,14 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Login page for FAQ admin</title>
-    <link rel="stylesheet" href="Styles/style.css" type="text/css"/>
+    <link rel="stylesheet" href="../Styles/style.css" type="text/css"/>
     <meta charset="utf-8" />
 </head>
 <body>
     <div id="page">
 
         <header>
-            <div id="logo"><img src="Images/Dryden-Regional-Health-Centre-Logo.jpg" alt="logo of drhc hospital"/></div>
+            <div id="logo"><img src="../Images/Dryden-Regional-Health-Centre-Logo.jpg" alt="logo of drhc hospital"/></div>
         </header>
 
         <main>

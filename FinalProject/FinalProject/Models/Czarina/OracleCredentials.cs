@@ -10,4 +10,4 @@ namespace _5101BFinalProject.Models
         public const string username = "n01257490";
         public const string password = "oracle";
     }
-}C:\Users\andybao\Source\Repos\WebAppFinal\FinalProject\FinalProject\Czarina\Login.aspx
+}
