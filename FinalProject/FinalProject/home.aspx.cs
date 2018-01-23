@@ -24,13 +24,19 @@ namespace FinalProject
             Response.Redirect("Andrei/Login.aspx");
         }
 
-        protected void lbtn_bradley_click(object sender, EventArgs e) { }
+        protected void lbtn_bradley_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Brad/volunteers_page.aspx");
+        }
 
         protected void lbtn_czarina_click(object sender, EventArgs e) { }
 
         protected void lbtn_raminder_click(object sender, EventArgs e) { }
 
-        protected void lbtn_sophia_click(object sender, EventArgs e) { } 
+        protected void lbtn_sophia_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Sophia/ecards.aspx");
+        }
 
         protected void lbtn_andy_click(object sender, EventArgs e)
         {

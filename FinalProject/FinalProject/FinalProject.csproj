@@ -83,10 +83,13 @@
     <Content Include="Andrei\Login.aspx" />
     <Content Include="Andrei\NewQuestion.aspx" />
     <Content Include="Andy\survey.aspx" />
+    <Content Include="Brad\volunteers_page.aspx" />
     <Content Include="Demo\demo.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
     <Content Include="Images\Dryden-Regional-Health-Centre-Logo.jpg" />
+    <Content Include="Raminder\Lee_Jobs.aspx" />
+    <Content Include="Sophia\ecards.aspx" />
     <Content Include="Styles\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -126,6 +129,13 @@
     <Compile Include="Andy\survey.aspx.designer.cs">
       <DependentUpon>survey.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Brad\volunteers_page.aspx.cs">
+      <DependentUpon>volunteers_page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Brad\volunteers_page.aspx.designer.cs">
+      <DependentUpon>volunteers_page.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Demo\demo.aspx.cs">
       <DependentUpon>demo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,12 +158,26 @@
     <Compile Include="Models\Andrei\Question.cs" />
     <Compile Include="Models\andybao\CalvinDB.cs" />
     <Compile Include="Models\andybao\FunctionHelper.cs" />
-    <Compile Include="Models\OracleCredentials.cs" />
+    <Compile Include="Models\Brad\databaseConnect.cs" />
+    <Compile Include="Models\Brad\volunteers.cs" />
+    <Compile Include="Models\andybao\OracleCredentials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raminder\Lee_Jobs.aspx.cs">
+      <DependentUpon>Lee_Jobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raminder\Lee_Jobs.aspx.designer.cs">
+      <DependentUpon>Lee_Jobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sophia\ecards.aspx.cs">
+      <DependentUpon>ecards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sophia\ecards.aspx.designer.cs">
+      <DependentUpon>ecards.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
