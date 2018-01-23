@@ -29,7 +29,8 @@ namespace Final_Project_C_Sharp
                 {   
                     faq_list.InnerHtml += "<tr><td><span class='question'>" + question.Question_Description  + "</span>" +
                         "<span class='answer'>" + question.Answer_Description + 
-                        "</span><span class='meta'>Question # " + question.Question_ID + ", created: " + question.Created + " by " + question.Owner  +
+                        "</span><span class='meta'>Question # " + question.Question_ID + ", created: " + question.Created + " by "
+                        + question.L_Name + " " + question.F_Name  +
                         " in category " + question.Category_Description  + ".</span></td>" +
                         "</tr><tr class='spacer'></tr>";
                 }
@@ -45,10 +46,10 @@ namespace Final_Project_C_Sharp
         protected void btn_logout_Click(object sender, EventArgs e)
         {
             // Remove session variable
-            Session.Remove("email");
+            //Session.Remove("email");
 
             // Clear all session values
-            //Session.Clear();
+            Session.Clear();
 
             // Ends the session
             //Session.Abandon();
@@ -141,11 +142,15 @@ namespace Final_Project_C_Sharp
                 ", q.description AS question" +
                 ", a.description AS answer" +
                 ", c.description AS category" +
+                ", p.person_last_name AS l_name" +
+                ", p.person_first_name AS f_name" +
                 " FROM " + ConnectDb.username + ".t_questions q" +
                 " JOIN " + ConnectDb.username + ".t_answers a" +
                 " ON q.answer_id = a.answer_id" +
                 " INNER JOIN " + ConnectDb.username + ".t_categories c" +
                 " ON q.category_id = c.category_id" +
+                " JOIN " + ConnectDb.username + ".persons p" +
+                " ON p.person_status = q.owner" +
                 " ORDER BY q.question_id";
             conn.Open();
             OracleCommand cmd = new OracleCommand(command, conn);
@@ -175,6 +180,7 @@ namespace Final_Project_C_Sharp
 
         // Returns Question object populated with data from DB
         public Question Populate_Question(OracleDataReader reader) {
+
             // Create temp object to hold current info about question
             Question temp_qs = new Question();
 
@@ -188,6 +194,8 @@ namespace Final_Project_C_Sharp
             temp_qs.Owner = Convert.ToString(reader["owner"]);
             temp_qs.Created = Convert.ToString(reader["created"]);
             temp_qs.Modified = Convert.ToString(reader["modified"]);
+            temp_qs.L_Name = Convert.ToString(reader["l_name"]);
+            temp_qs.F_Name = Convert.ToString(reader["f_name"]);
 
             return temp_qs;
         }
@@ -208,11 +216,15 @@ namespace Final_Project_C_Sharp
                 ", q.description AS question" +
                 ", a.description AS answer" +
                 ", c.description AS category" +
+                ", p.person_last_name AS l_name" +
+                ", p.person_first_name AS f_name" +
                 " FROM " + ConnectDb.username + ".t_questions q" +
                 " INNER JOIN " + ConnectDb.username + ".t_answers a" +
                 " ON q.answer_id = a.answer_id" +
                 " INNER JOIN " + ConnectDb.username + ".t_categories c" +
                 " ON q.category_id = c.category_id" +
+                " JOIN " + ConnectDb.username + ".persons p" +
+                " ON p.person_status = q.owner" +
                 " WHERE q.question_id = :question";
             conn.Open();
             OracleCommand cmd = new OracleCommand(command, conn);

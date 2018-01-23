@@ -11,6 +11,8 @@ namespace Final_Project_C_Sharp.Models
         private int     _question_id;
         private string   _question_description;
         private string  _owner;
+        private string  _l_name;
+        private string  _f_name;
         private string  _created;
         private string  _modified;
         private int     _answer_id;
@@ -71,6 +73,18 @@ namespace Final_Project_C_Sharp.Models
         {
             set { this._modified = value; }
             get { return this._modified; }
+        }
+
+        public string F_Name
+        {
+            set { this._f_name = value; }
+            get { return this._f_name; }
+        }
+
+        public string L_Name
+        {
+            set { this._l_name = value; }
+            get { return this._l_name; }
         }
     }
 }

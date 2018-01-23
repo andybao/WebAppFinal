@@ -21,7 +21,7 @@ namespace Final_Project_C_Sharp
             // Go through the list and display
             foreach (Question question in faq_questions)
             {
-                // If no answer substitute with placeholder text
+                // If no answer, substitute with placeholder text
                 string answer_out = "[No answer yet]";
                 if ("empty" != question.Answer_Description) {
                     answer_out = question.Answer_Description;
@@ -116,7 +116,7 @@ namespace Final_Project_C_Sharp
             int res_rows = Add_New(txt_question_desc.Text, Convert.ToInt32(slc_cat.SelectedValue));
             if (res_rows > 0)
             {
-                msg.Text += "Thank yo for your question. It was sent successfully.";
+                msg.Text += "Thank yo for your question. It was added successfully.";
             }
             else
             {
@@ -139,7 +139,7 @@ namespace Final_Project_C_Sharp
 
             try
             {
-                // Insert new answer
+                // Insert empty answer, because client provides only question
                 command = "INSERT INTO " + ConnectDb.username + ".t_answers VALUES( " + ConnectDb.username + ".t_answers_seq.NEXTVAL, 'empty')";
                 cmd = new OracleCommand(command, conn);
                 rows += cmd.ExecuteNonQuery();

@@ -78,9 +78,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Andrei\Authorized.aspx" />
-    <Content Include="Andrei\FAQ.aspx" />
-    <Content Include="Andrei\Login.aspx" />
     <Content Include="Andrei\NewQuestion.aspx" />
     <Content Include="Andy\survey.aspx" />
     <Content Include="Brad\volunteers_page.aspx" />
@@ -95,25 +92,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Andrei\Authorized.aspx.cs">
-      <DependentUpon>Authorized.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Andrei\Authorized.aspx.designer.cs">
-      <DependentUpon>Authorized.aspx</DependentUpon>
     </Compile>
     <Compile Include="Andrei\FAQ.aspx.cs">
-      <DependentUpon>FAQ.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Andrei\FAQ.aspx.designer.cs">
-      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="Andrei\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Andrei\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Andrei\NewQuestion.aspx.cs">
       <DependentUpon>NewQuestion.aspx</DependentUpon>

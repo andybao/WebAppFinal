@@ -10,7 +10,7 @@ namespace Final_Project_C_Sharp.Models
     {
         // Andrei Navumau "N01262150";
         // Andy Bao "N01257490";
-        public static string username = "n01257490";
+        public static string username = "N01257490";
         public static string connectionString = String.Format(
             "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={0})" +
             "(PORT={1}))(CONNECT_DATA=(SERVICE_NAME={2})));User Id={3};Password={4};"
