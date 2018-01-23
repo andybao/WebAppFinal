@@ -39,8 +39,8 @@
         <asp:Label ID="valid_info" runat="server"></asp:Label> <br /><br/>
 
         Job Start Date:<%--<asp:TextBox ID="txt_start" runat="server"></asp:TextBox>--%>
-        <asp:Label ID="valid_start" runat="server"></asp:Label> 
-              <input type="date" runat="server" id="date_picker" /></div><br /><br/>
+              <input type="date" runat="server" id="date_picker" />
+        <asp:Label ID="valid_start" runat="server"></asp:Label></div><br /><br/>
 
        Job End Date:   <asp:TextBox ID="txt_end" runat="server"></asp:TextBox>
         <br /><br/>

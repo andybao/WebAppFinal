@@ -73,8 +73,17 @@ namespace FinalProject
                 string job_type;
                 string job_title = dropdownlist1.SelectedItem.Text;
                 string job_info = txt_info.Text;
-            DateTime job_start_date = Convert.ToDateTime(date_picker.Value);
+            //DateTime job_start_date = Convert.ToDateTime(date_picker.Value);
             //DateTime job_start_date = txt_start.Text;
+            DateTime job_start_date = new DateTime();
+            
+            try
+            {
+                job_start_date = DateTime.Parse(date_picker.Value);
+            } catch (System.FormatException exception)
+            {
+                valid_start.Text = "Choose a start date";
+            }
             string job_end_date = txt_end.Text;
                 string job_location = txt_loc.Text;
                 string job_salary = txt_salary.Text;
@@ -92,10 +101,10 @@ namespace FinalProject
             {
                 job_type = "Full Time";
             }
-            if (job_start_date == null)
+            /*if (job_start_date == null)
             {
                 valid_start.Text = "Choose a start date";
-            }
+            }*/
 
             int rows = 0;
                 try

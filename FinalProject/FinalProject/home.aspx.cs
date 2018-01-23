@@ -31,7 +31,10 @@ namespace FinalProject
 
         protected void lbtn_czarina_click(object sender, EventArgs e) { }
 
-        protected void lbtn_raminder_click(object sender, EventArgs e) { }
+        protected void lbtn_raminder_click(object sender, EventArgs e)
+        {
+            Response.Redirect("Raminder/Lee_Jobs.aspx");
+        }
 
         protected void lbtn_sophia_click(object sender, EventArgs e)
         {
