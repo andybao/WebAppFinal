@@ -11,8 +11,8 @@ namespace bradCampbell_FinalAssignment.Models
         private const string _host = "calvin.humber.ca";
         private const string _port = "1521";
         private const string _sid = "grok";
-        private const string _username = "n01255243";
-        private const string _password = "oracle";
+        private const string _username = "";
+        private const string _password = "";
         private static string _connectionString = OracleConnString(_host, _port, _sid, _username, _password);
         private OracleConnection conn = new OracleConnection(_connectionString);
 

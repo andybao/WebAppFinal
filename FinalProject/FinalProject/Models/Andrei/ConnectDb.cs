@@ -8,9 +8,9 @@ namespace Final_Project_C_Sharp.Models
 {
     public class ConnectDb
     {
-        // Andrei Navumau "N01262150";
-        // Andy Bao "N01257490";
-        public static string username = "N01257490";
+        // Andrei Navumau "";
+        // Andy Bao "";
+        public static string username = "";
         public static string connectionString = String.Format(
             "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={0})" +
             "(PORT={1}))(CONNECT_DATA=(SERVICE_NAME={2})));User Id={3};Password={4};"
@@ -18,7 +18,7 @@ namespace Final_Project_C_Sharp.Models
             , 1521 // port
             , "grok" // service name
             , username
-            , "oracle" // password
+            , "" // password
             );
 
         // Methods

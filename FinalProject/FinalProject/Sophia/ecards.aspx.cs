@@ -16,8 +16,8 @@ namespace ECards
         protected static string myhost = "calvin.humber.ca";
         protected static string port = "1521";
         protected static string sid = "grok";
-        protected static string user = "n01257490";
-        protected static string pass = "oracle";
+        protected static string user = "";
+        protected static string pass = "";
         protected static string connectionString = OracleConnString(myhost, port, sid, user, pass);
         OracleConnection conn = new OracleConnection(connectionString);
 

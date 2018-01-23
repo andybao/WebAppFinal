@@ -7,7 +7,7 @@ namespace _5101BFinalProject.Models
 {
     public class OracleCredentials
     {
-        public const string username = "n01257490";
-        public const string password = "oracle";
+        public const string username = "";
+        public const string password = "";
     }
 }
